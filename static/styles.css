@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f7c7db, #d18f9b); /* Gradient with soft pink tones */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-section img {
+    width: 150px; /* Logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+.title-section h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.title-section p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+.success {
+    color: green;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 5px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: rgba(255, 200, 0, 0.41);
+            color: white;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding: 10px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            border-radius: 4px;
+        }
+        a.button:hover {
+            background-color: rgb(167, 179, 0);
+        }
+        .diet-plan {
+            margin-top: 30px;
+        }
+        .diet-plan img {
+            width: 100%;
+            max-width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .pdf-buttons {
+            margin-top: 20px;
+            margin-bottom: 40px; /* Add margin to ensure space above footer */
+        }
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="button" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+        <a class="button" href="{{ url_for('logout') }}">Logout</a>
+    </header>
+
+    <div class="container">
+        <h1>Your Prediction Result</h1>
+        <p><strong>{{ result }}</strong></p>
+    </div>
+
+    <div class="diet-plan">
+        <h2>Recommended Diet Plan</h2>
+        <h3>(You can use the recommended diet plan below for safety and precaution, whether PCOS is detected or not)</h3>
+        
+        <img src="/static/image/diet.png" alt="Diet Plan">
+    </div>
+
+    <div class="pdf-buttons">
+        <h2>Diet Plan PDF Options</h2>
+        <!-- Button to View PDF -->
+        <a href="{{ url_for('static', filename='pdf/diet-plan.pdf') }}" class="button" target="_blank">View Diet Plan PDF</a>
+        <!-- Button to Download PDF -->
+        <a href="{{ url_for('static', filename='pdf/diet-plan.pdf') }}" class="button" download>Download Diet Plan PDF</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Company. All rights reserved.
+    </footer>
+</body>
+</html>
